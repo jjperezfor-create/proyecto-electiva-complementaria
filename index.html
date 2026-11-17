@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Super Urbana: tienda online de textiles, accesorios y productos digitales.">
+<title>SUPER URBANA | Tienda en línea</title>
+<style>
+:root{--ink:#22211f;--muted:#77736d;--cream:#f5f1e9;--paper:#fff;--accent:#b56d4d;--line:#e8e1d8}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:var(--paper)}a{color:inherit;text-decoration:none}button,input,textarea{font:inherit}
+.promo{background:var(--ink);color:#fff;text-align:center;padding:10px;font-size:11px;letter-spacing:2px}
+header{position:sticky;top:0;z-index:10;background:#ffffffed;backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{max-width:1180px;margin:auto;padding:17px 24px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.logo{font-weight:900;font-size:22px;letter-spacing:2px}.logo span{color:var(--accent)}nav{display:flex;gap:25px;font-size:12px;font-weight:bold;letter-spacing:.5px}nav a:hover{color:var(--accent)}.cart{border:1px solid var(--line);padding:10px 14px;border-radius:30px;font-size:12px;font-weight:bold}
+.hero{display:grid;grid-template-columns:1fr 1fr;background:var(--cream);min-height:530px}.hero-copy{padding:85px max(28px,calc((100vw - 1180px)/2));padding-right:45px;display:flex;flex-direction:column;align-items:flex-start;justify-content:center}
+.eyebrow{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--accent);font-weight:bold}
+h1{font:400 clamp(45px,6vw,76px)/1.02 Georgia,serif;margin:20px 0}.hero-copy p{max-width:480px;color:var(--muted);line-height:1.85;font-size:14px}
+.btn{display:inline-block;background:var(--ink);color:white;padding:15px 23px;border:0;border-radius:2px;font-size:11px;letter-spacing:1px;text-transform:uppercase;font-weight:bold;cursor:pointer}.btn:hover,.buy:hover{background:var(--accent)}
+.hero-img{min-height:480px;background:url('https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1400&q=85') center/cover}
+.section{max-width:1180px;margin:auto;padding:78px 24px;scroll-margin-top:85px}.heading{text-align:center;margin-bottom:38px}.heading h2{font:400 clamp(32px,4vw,45px) Georgia,serif;margin:12px 0}.heading p{color:var(--muted);font-size:14px;line-height:1.7}
+.category-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.category{height:260px;position:relative;overflow:hidden;background:#ddd}.category img{width:100%;height:100%;object-fit:cover;transition:transform .4s}.category:hover img{transform:scale(1.05)}.category strong{position:absolute;bottom:18px;left:18px;background:#fff;padding:12px 16px;font:400 20px Georgia,serif}
+.benefits{background:var(--ink);color:#fff;display:grid;grid-template-columns:repeat(3,1fr);padding:28px max(24px,calc((100vw - 1180px)/2));gap:20px;text-align:center}.benefits strong{display:block;font:400 19px Georgia,serif;margin-bottom:7px}.benefits span{color:#c9c3bb;font-size:12px}
+.products{background:var(--cream)}.product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.product{background:#fff}.product img{width:100%;height:290px;object-fit:cover;display:block}.info{padding:19px}.info small{color:var(--accent);letter-spacing:1.5px;text-transform:uppercase;font-size:10px;font-weight:bold}.info h3{font:400 22px Georgia,serif;margin:9px 0}.info p{font-size:13px;color:var(--muted);line-height:1.6;min-height:40px}.price-row{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:15px}.price{font-weight:bold;font-size:14px}.buy{background:var(--ink);color:white;border:0;padding:11px 13px;cursor:pointer;font-size:10px;letter-spacing:.8px;text-transform:uppercase}
+.dofa{background:#e9e1d5;text-align:center;padding:55px 20px}.dofa h2{font:400 35px Georgia,serif;margin:10px}.dofa p{max-width:650px;margin:12px auto 22px;color:var(--muted);font-size:14px;line-height:1.7}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:55px}.contact-grid h2{font:400 40px Georgia,serif;margin:12px 0}.contact-grid p{color:var(--muted);font-size:14px;line-height:1.8}.detail{margin-top:20px;font-size:14px;line-height:1.8}.detail b{display:block;color:var(--accent);font-size:10px;letter-spacing:2px;text-transform:uppercase}
+form{display:grid;gap:12px}input,textarea{width:100%;padding:15px;border:1px solid var(--line);background:#fbfaf8;outline:none}textarea{min-height:125px;resize:vertical}
+footer{background:var(--ink);color:white;text-align:center;padding:30px 20px;font-size:11px;letter-spacing:1px}.notice{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--ink);color:#fff;padding:13px 18px;opacity:0;pointer-events:none;transition:.2s;z-index:20;font-size:13px}.notice.show{opacity:1}
+@media(max-width:760px){.nav{flex-wrap:wrap;padding:14px 18px}nav{order:3;width:100%;justify-content:space-between;gap:8px;font-size:10px}.cart{margin-left:auto}.hero{grid-template-columns:1fr}.hero-copy{padding:60px 24px}.hero-img{min-height:300px}.category-grid,.product-grid{grid-template-columns:1fr}.category{height:300px}.benefits{grid-template-columns:1fr;gap:22px}.contact-grid{grid-template-columns:1fr;gap:30px}.section{padding:60px 20px}}
+</style>
+</head>
+<body>
+<div class="promo">SUPER URBANA · TU ESTILO, TU MUNDO · COMPRA FÁCIL Y SEGURA</div>
+<header><div class="nav">
+<a class="logo" href="#inicio">SUPER <span>URBANA.</span></a>
+<nav><a href="#inicio">INICIO</a><a href="#tienda">TIENDA EN LÍNEA</a><a href="#contacto">CONTACTO</a></nav>
+<a class="cart" href="#tienda">🛍 <span id="count">0</span> artículos</a>
+</div></header>
+<main>
+<section class="hero" id="inicio">
+<div class="hero-copy"><span class="eyebrow">Textil · Accesorios · Digital</span><h1>Tu estilo,<br>sin límites.</h1>
+<p>En <b>Super Urbana</b> encuentras productos para expresar tu personalidad. Explora nuestra selección de prendas, accesorios y productos digitales en una tienda práctica, cercana y pensada para ti.</p>
+<a class="btn" href="#tienda">Explorar tienda</a></div>
+<div class="hero-img" role="img" aria-label="Personas explorando tendencias de moda"></div>
+</section>
+<section class="section">
+<div class="heading"><span class="eyebrow">Descubre Super Urbana</span><h2>Todo lo que buscas, en un solo lugar.</h2><p>Encuentra tu próxima prenda favorita, ese accesorio especial o herramientas digitales para tus ideas.</p></div>
+<div class="category-grid">
+<a class="category" href="#tienda"><img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=900&q=85" alt="Moda y ropa"><strong>Textil</strong></a>
+<a class="category" href="#tienda"><img src="https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=900&q=85" alt="Accesorios"><strong>Accesorios</strong></a>
+<a class="category" href="#tienda"><img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=85" alt="Productos digitales"><strong>Productos digitales</strong></a>
+</div>
+</section>
+<div class="benefits"><div><strong>Compra fácil</strong><span>Explora y elige tus favoritos.</span></div><div><strong>Variedad</strong><span>Distintas categorías en un solo lugar.</span></div><div><strong>Atención cercana</strong><span>Estamos disponibles para resolver tus dudas.</span></div></div>
+<section class="dofa" id="dofa"><span class="eyebrow">Nuestro proyecto</span><h2>Conoce nuestro análisis estratégico</h2><p>Consulta la matriz DOFA de Super Urbana: fortalezas, oportunidades, debilidades y amenazas que tenemos en cuenta para desarrollar esta idea de negocio.</p><a class="btn" href="dofa.html">Ver matriz DOFA</a></section>
+<section class="products section" id="tienda" style="max-width:none;padding-left:max(20px,calc((100vw - 1180px)/2));padding-right:max(20px,calc((100vw - 1180px)/2))">
+<div class="heading"><span class="eyebrow">Selección destacada</span><h2>Tienda en línea</h2><p>Productos de ejemplo con precios simulados en pesos colombianos.</p></div>
+<div class="product-grid">
+<article class="product"><img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=900&q=85" alt="Camiseta básica"><div class="info"><small>Textil</small><h3>Camiseta esencial</h3><p>Una prenda cómoda y versátil para combinar todos los días.</p><div class="price-row"><span class="price">$59.900 COP</span><button class="buy" onclick="add('Camiseta esencial')">Compra ahora</button></div></div></article>
+<article class="product"><img src="https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=900&q=85" alt="Accesorio minimalista"><div class="info"><small>Accesorios</small><h3>Accesorio minimalista</h3><p>Un detalle sencillo para complementar tu estilo personal.</p><div class="price-row"><span class="price">$39.900 COP</span><button class="buy" onclick="add('Accesorio minimalista')">Compra ahora</button></div></div></article>
+<article class="product"><img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=900&q=85" alt="Producto digital"><div class="info"><small>Digital</small><h3>Pack de plantillas</h3><p>Recursos editables para organizar tus ideas y proyectos.</p><div class="price-row"><span class="price">$24.900 COP</span><button class="buy" onclick="add('Pack de plantillas')">Compra ahora</button></div></div></article>
+</div>
+<div style="text-align:center;margin-top:35px;color:#77736d;font-size:12px">Métodos de pago previstos: transferencia, Nequi, PSE y tarjetas débito/crédito. Pagos demostrativos, sin cobros reales.</div>
+</section>
+<section class="section" id="contacto"><div class="contact-grid">
+<div><span class="eyebrow">Contáctanos</span><h2>Estamos para ayudarte.</h2><p>¿Tienes preguntas sobre un producto, un pedido o nuestra tienda? Escríbenos a través de nuestros canales de atención.</p>
+<div class="detail"><b>Correo electrónico</b><a href="mailto:contacto@superurbana.com">contacto@superurbana.com</a></div>
+<div class="detail"><b>Instagram</b><a href="https://www.instagram.com/" target="_blank" rel="noopener">@superurbana</a></div>
+<div class="detail"><b>WhatsApp</b><a href="https://wa.me/573000000000" target="_blank" rel="noopener">+57 300 000 0000</a></div></div>
+<form id="form"><input name="nombre" placeholder="Nombre completo" required><input type="email" name="correo" placeholder="Correo electrónico" required><textarea name="mensaje" placeholder="Escribe tu mensaje..." required></textarea><button class="btn">Enviar mensaje</button><small style="color:#888">Formulario de demostración: requiere conexión a un servicio para recibir mensajes reales.</small></form>
+</div></section>
+</main>
+<footer>© 2026 SUPER URBANA · TIENDA EN LÍNEA · PROYECTO ACADÉMICO</footer><div class="notice" id="notice"></div>
+<script>
+let n=0;function toast(t){let e=document.getElementById('notice');e.textContent=t;e.classList.add('show');setTimeout(()=>e.classList.remove('show'),2300)}
+function add(p){document.getElementById('count').textContent=++n;toast(p+' se agregó al carrito (simulación).')}
+document.getElementById('form').addEventListener('submit',e=>{e.preventDefault();toast('¡Gracias por contactarnos! Formulario de demostración.');e.target.reset()});
+</script>
+</body></html>
